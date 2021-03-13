@@ -4,7 +4,6 @@ import ProjectCard from '../components/home/ProjectCard';
 
 const projects = [
     {name: 'Image classification', description: `Upload images and I'll tell you what it is!`, path: '/image-classification', image: 'tf-image-classification-logo.png'},
-    {name: 'Object detection', description: 'Are you really a "person"? Turn on your webcam and find out!', path: '/object-detection', image: 'tf-object-detection-logo.png'},
 ]
 
 const Home = () => {
