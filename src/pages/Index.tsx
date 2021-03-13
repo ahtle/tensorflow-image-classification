@@ -24,7 +24,7 @@ const Home = () => {
                         </div>
                         <div className="flex flex-col items-center mb-5 md:mb-0">
                             <h1 className="text-tensorflow-color text-bold mb-5">Tensorflow</h1>
-                            <p className="text-center">an end-to-end open source platform for machine learning</p>
+                            <p className="text-center">An end-to-end open source platform for machine learning</p>
                         </div>
                     </div>
                 </>
