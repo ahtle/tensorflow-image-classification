@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/tensorflow-image-classification/static/css/main.0d905eeb.chunk.css",
-    "main.js": "/tensorflow-image-classification/static/js/main.88c5ddb5.chunk.js",
-    "main.js.map": "/tensorflow-image-classification/static/js/main.88c5ddb5.chunk.js.map",
+    "main.js": "/tensorflow-image-classification/static/js/main.150908a5.chunk.js",
+    "main.js.map": "/tensorflow-image-classification/static/js/main.150908a5.chunk.js.map",
     "runtime-main.js": "/tensorflow-image-classification/static/js/runtime-main.0ff86442.js",
     "runtime-main.js.map": "/tensorflow-image-classification/static/js/runtime-main.0ff86442.js.map",
-    "static/js/2.09431c56.chunk.js": "/tensorflow-image-classification/static/js/2.09431c56.chunk.js",
-    "static/js/2.09431c56.chunk.js.map": "/tensorflow-image-classification/static/js/2.09431c56.chunk.js.map",
+    "static/js/2.f8dc1c67.chunk.js": "/tensorflow-image-classification/static/js/2.f8dc1c67.chunk.js",
+    "static/js/2.f8dc1c67.chunk.js.map": "/tensorflow-image-classification/static/js/2.f8dc1c67.chunk.js.map",
     "index.html": "/tensorflow-image-classification/index.html",
     "static/css/main.0d905eeb.chunk.css.map": "/tensorflow-image-classification/static/css/main.0d905eeb.chunk.css.map",
-    "static/js/2.09431c56.chunk.js.LICENSE.txt": "/tensorflow-image-classification/static/js/2.09431c56.chunk.js.LICENSE.txt"
+    "static/js/2.f8dc1c67.chunk.js.LICENSE.txt": "/tensorflow-image-classification/static/js/2.f8dc1c67.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0ff86442.js",
-    "static/js/2.09431c56.chunk.js",
+    "static/js/2.f8dc1c67.chunk.js",
     "static/css/main.0d905eeb.chunk.css",
-    "static/js/main.88c5ddb5.chunk.js"
+    "static/js/main.150908a5.chunk.js"
   ]
 }
