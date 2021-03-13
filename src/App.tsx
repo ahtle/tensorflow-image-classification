@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import MainHeader from './components/headers/MainHeader';
 import MainFooter from './components/footer/MainFooter';
 import Home from '../src/pages/Index';
@@ -8,7 +8,7 @@ import './styles/index.css';
 function App() {
   return (
     <>
-      <Router basename={process.env.PUBLIC_URL}>  
+      <Router basename="/">  
         <MainHeader />
 
         <div className="min-h-screen">
