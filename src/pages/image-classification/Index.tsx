@@ -1,22 +1,51 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Section from '../../components/Section';
 import InputText from '../../components/InputText';
 import Button from '../../components/Button';
-// import * as mobilenet from '@tensorflow-models/mobilenet';
+import * as tf from '@tensorflow/tfjs';
+import * as mobilenet from '@tensorflow-models/mobilenet';
 
 const ImageClassificationPage = () => {
     const [urlString, setUrlString] = useState('https://media4.s-nbcnews.com/j/newscms/2016_36/1685951/ss-160826-twip-05_8cf6d4cb83758449fd400c7c3d71aa1f.fit-760w.jpg');
+    const [model, setModel] = useState<mobilenet.MobileNet>();
+    const imgRef = useRef<HTMLImageElement>(null);
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setUrlString(e.target.value);
     };
 
     const onClick = async () => {
-        let res = await fetch('https://picsum.photos/300');;
+        let res = await fetch('https://picsum.photos/400');;
         if (res.status === 200) {
             setUrlString(res.url);
         }
     };
+
+    const classifyModel = async () => {
+        if (model && imgRef.current) {
+            const predictions = await model.classify(imgRef.current);
+            console.log(predictions[0]);
+        }
+    };
+    
+    useEffect(() => {
+        setTimeout(() => {
+            classifyModel();
+        }, 500);
+    }, [urlString]);
+
+    useEffect(() => {
+        classifyModel();
+    }, [model]);
+    
+    useEffect( () => {
+        async function loadModel() {
+            tf.getBackend();
+            const net = await mobilenet.load();
+            setModel(net);
+        }
+        loadModel();
+    }, []);
 
     return (
         <div id="ImageClassificationPage" className="px-4 md:px-0">
@@ -52,7 +81,7 @@ const ImageClassificationPage = () => {
                     {/* col 2 */}
                     <div className="flex flex-col items-center">
                         <div className="w-full md:w-2/3">
-                            <img src={urlString} />
+                            <img src={urlString} ref={imgRef} crossOrigin="anonymous"/>
                         </div>
                     </div>
                 </div>
@@ -60,27 +89,5 @@ const ImageClassificationPage = () => {
         </div>
     )
 }
-
-// things to do:
-// input box to get image url
-// or use an api to get a random image: https://picsum.photos/300
-// display image
-// run image classification and display result
-
-
-// Note: you do not need to import @tensorflow/tfjs here.
-
-// const mobilenet = require('@tensorflow-models/mobilenet');
-
-// const img = document.getElementById('img');
-
-// // Load the model.
-// const model = await mobilenet.load();
-
-// // Classify the image.
-// const predictions = await model.classify(img);
-
-// console.log('Predictions: ');
-// console.log(predictions);
 
 export default ImageClassificationPage;
