@@ -3,7 +3,6 @@ import MainHeader from './components/headers/MainHeader';
 import MainFooter from './components/footer/MainFooter';
 import Home from '../src/pages/Index';
 import ObjectDetectionPage from './pages/object-detection/Index';
-import ImageClassificationPage from './pages/image-classification/Index';
 import './styles/index.css';
 
 function App() {
@@ -15,7 +14,6 @@ function App() {
         <div className="min-h-screen">
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/image-classification" exact component={ImageClassificationPage} />
             <Route path="/object-detection" exact component={ObjectDetectionPage} />
             <Route render={() => <h1>404: page not found</h1>} />
           </Switch>
